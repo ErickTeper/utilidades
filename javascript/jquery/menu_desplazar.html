@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>documento </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+.menu1 {
+    position: absolute;
+    left: -210px; /*fuera de pagina*/
+    top: 0;
+    width: 213px;
+    height: 232px;
+    background-color: #ff9;
+    padding: 15px;
+}
+.abierto {
+    position: absolute;
+    left: 0px; /*fuera de pagina*/
+    top: 0;
+    width: 213px;
+    height: 232px;
+    background-color: #ff9;
+    padding: 15px;
+}
+#boton1{
+    position: absolute;
+    left: 216px;
+    top: 5px;
+    width: 21px;
+    height: 25px;
+    z-index: 1;
+    cursor: pointer;
+}
+#menu2 {
+    position: absolute;
+    left: -210px; /*fuera de pagina*/
+    top: 235px;
+    width: 213px;
+    height: 232px;
+    background-color: #ff9;
+    padding: 15px;
+}
+#boton2{
+    position: absolute;
+    left: 216px;
+    top: 5px;
+    width: 21px;
+    height: 25px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+</style>
+<script>
+
+$(document).ready(function(){
+
+ $("#boton1").click(function(){
+
+    $(".menu1").toggleClass("abierto");
+
+ });
+
+
+ $("#boton2").click(function() {
+    var oculto = $("#menu2").css("left") == "-210px";
+    if(oculto){
+     $("#menu2").animate({left:"0px"}, 1000);
+    }else{
+     $("#menu2").animate({left:"-210px"}, 1000);
+    }
+   });
+
+
+
+
+});
+
+</script>
+
+
+</head>
+
+
+<body>
+<div class="menu1">
+    <div id="boton1">X</div>
+    <p>menu:</p>
+    <p>opcion 1</p>
+    <p>opcion 2</p>
+    <p>opcion 3</p>
+    <p>opcion 4</p>
+</div>
+
+<div id="menu2">
+    <div id="boton2">X</div>
+    <p>menu:</p>
+    <p>opcion 1</p>
+    <p>opcion 2</p>
+    <p>opcion 3</p>
+    <p>opcion 4</p>
+</div>
+</body>
+
+</html>

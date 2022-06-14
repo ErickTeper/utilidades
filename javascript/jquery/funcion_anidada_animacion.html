@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>documento </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+#titulo{
+    margin-left: 150px;
+}
+#foto p{
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    width: 300px;
+}
+h1{
+    text-align: center;
+}
+</style>
+<script>
+$(document).ready(function(){
+
+    $("#titulo").hide();
+    $("#alf").width(60).height(40).click(function(){
+        $(this).animate({
+            marginLeft:"150px",
+            width:"300px",
+            height:"200px"
+        }, 2000, function(){
+            $("#titulo").fadeIn(1000).delay(1000).fadeOut(1000);
+        }); //fin animate
+        $(this).delay(2000).animate({
+            marginLeft:"0px",
+            width:"60px",
+            height:"40px"
+        }, 2000);   
+    });//fin click
+
+}); //fin ready
+
+
+</script>
+
+
+</head>
+
+
+<body>
+
+    <h1>prueba imagen</h1>
+    <div id="foto">
+        <img src="imagen/alf.jpg" width="300" height="200" id="alf">
+        <p id="titulo">Alf</p>
+    </div>
+</body>
+
+</html>

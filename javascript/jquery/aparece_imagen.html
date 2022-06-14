@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>banner </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+#contenedor1{
+    position: absolute;
+    left: 67px;
+    top: 177px;
+    width: 408px;
+    height: 290px;
+    z-index: 1;
+}
+#contenedor2{
+    position: absolute;
+    left: 510px;
+    top: 176px;
+    width: 443px;
+    height: 297px;
+    z-index: 2;
+}
+
+ul{
+    list-style: none;
+}
+li{
+    margin: 10px 0;
+    font-size: 24px;
+    width:95px;
+}
+.destacar{
+    background-color: #f00;
+    color: #fff;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+    var elementos=document.querySelectorAll("li");
+    for (i=0;i<elementos.length;i++){
+        elementos[i].addEventListener("mouseover", pon_imagen, false);
+        elementos[i].addEventListener("mouseout", quita_imagen, false);
+    }
+
+});
+
+function pon_imagen(e){
+
+    if(e.target==elem1){
+        $("#elem1").addClass("destacar");
+        $("img").attr("src", "imagen/perro.jpg");
+    }
+    else if(e.target==elem2){
+        $("#elem2").addClass("destacar");
+        $("img").attr("src", "imagen/trago.webp");
+    }
+    else if(e.target==elem3){
+        $("#elem3").addClass("destacar");
+        $("img").attr("src", "imagen/alf.jpg");
+    }
+}
+
+function quita_imagen(e){
+    if(e.target==elem1){
+        $("#elem1").removeClass("destacar");
+        $("img").removeAttr("src");
+    }
+    if(e.target==elem2){
+        $("#elem2").removeClass("destacar");
+        $("img").removeAttr("src");
+    }
+    if(e.target==elem3){
+        $("#elem3").removeClass("destacar");
+        $("img").removeAttr("src");
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+    <div id=""contenedor1>
+
+        <ul>
+            <li id="elem1">imagen 1</li>
+            <li id="elem2">imagen 2</li>
+            <li id="elem3">imagen 3</li>
+        </ul>
+
+
+    </div>
+    <div id="contenedor2">
+        <img src="">
+    </div>
+</body>
+
+</html>

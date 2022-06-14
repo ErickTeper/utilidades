@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>documento </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+
+</style>
+<script>
+
+$(document).ready(function(){
+/*en web garantiza que la imagen este cargada*/
+    var foto_nueva = new Image();
+    foto_nueva.src="imagen/perro.jpg";
+
+
+    $("#foto").hover(function(){
+        $(this).attr("src", foto_nueva.src);
+    },
+    function(){
+        $(this).attr("src", "imagen/alf.jpg");
+    });
+});
+
+</script>
+
+
+</head>
+
+
+<body>
+
+<img src="imagen/alf.jpg" width="300" height="200" id="foto">
+</body>
+
+</html>

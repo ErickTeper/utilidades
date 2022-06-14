@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+#menu_principal{
+    width: 750px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+li{
+    float: left;
+    width: 200px;
+    list-style: none;
+    margin: 0 10px;
+    text-align: center;
+    border: solid 2px #000;
+}
+
+li a{
+    border: 2px thin;
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    padding: 20px 30px;
+    text-decoration: none;
+    background: radial-gradient(circle at -20.71% 50%, #ffc300 0, #ffcb00 6.25%, #f0d300 12.5%, #dada00 18.75%, #c3e000 25%, #aae600 31.25%, #8eeb00 37.5%, #6def18 43.75%, #3cf23c 50%, #00f557 56.25%, #00f770 62.5%, #00f988 68.75%, #00fba1 75%, #00fcb9 81.25%, #00fdd2 87.5%, #00feea 93.75%, #00feff 100%);;
+
+}
+
+#submenu1{
+    position: absolute;
+    left: 425px;
+    top: 150px;
+    width:200px;
+    height: 131px;
+    z-index: 1;
+}
+
+#submenu1 a{
+    background: radial-gradient(circle at 14.7% 33.54%, #ff3ade 0, #ff34ed 10%, #ff34f7 20%, #ff37fb 30%, #ff3afa 40%, #f23cf2 50%, #c33de7 60%, #963ddc 70%, #693ed2 80%, #333fc9 90%, #003fc1 100%);;
+}
+
+</style>
+
+<script>
+$(document).ready(function(){
+
+    $("#submenu1").hide();
+
+    $("#archivo").click(function(){
+        $("#submenu1").toggle();
+    })
+
+    $("#opcion1").click(function(){
+        alert("opcion1");
+    });
+    $("#opcion2").click(function(){
+        alert("opcion2");
+    });
+    $("#opcion3").click(function(){
+        alert("opcion3");
+    });
+
+});
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="submenu1">
+
+<ul>
+
+    <li id="opcion1"><a href="#">opcion1</a></li>
+    <li id="opcion2"><a href="#">opcion2</a></li>
+    <li id="opcion3"><a href="#">opcion3</a></li>
+
+</ul>
+
+</div>
+<div id="menu_principal">
+    <ul>
+        <li id="archivo"><a href="#">Archivo</a></li>
+        <li><a href="#">Edicion</a></li>
+        <li><a href="#">Herramientas</a></li>
+    </ul>
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>each </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+img{
+    margin:0 20px;
+}
+#contenedor{
+    width: 75%;
+    margin: auto;
+}
+
+</style>
+<script>
+$(document).ready(function(){
+
+    document.getElementById("miboton").addEventListener("click", cambiar, false);
+
+});
+function cambiar(){
+
+    //$("img").fadeOut(1000).fadeIn(5000).width("310");
+
+    $("img").each(function(){
+
+        $(this).fadeOut(1000).fadeIn(1000).width("310");
+
+    });
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+<div id="contenedor">
+    <img src="imagen/perro.jpg" width="300">
+    <img src="imagen/trago.webp" width="300">
+    <img src="imagen/alf.jpg" width="300">
+</div>
+<div id="boton">
+<input type="button" id="miboton" value="accion">
+</div>
+</body>
+
+</html>

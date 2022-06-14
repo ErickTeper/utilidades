@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>documento </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+#alf {
+    opacity: 0.5;
+
+}
+
+</style>
+<script>
+
+$(document).ready(function(){
+
+   /*funcionamiento*/
+ 
+   $("#bici").click(function(){
+
+    $(this).animate({marginLeft:"+=150px"},1000); //({css}, tiempo)            
+
+   });
+    
+   $("#alf").mouseover(function(){
+       $(this).animate({opacity:1}, 250)
+   })
+   $("#alf").mouseout(function(){
+       $(this).animate({opacity:0.5}, 250)
+   })
+
+
+});
+
+</script>
+
+
+</head>
+
+
+<body>
+<img src="imagen/bici.jpg" width="300" height="200" id="bici">
+<img src="imagen/alf.jpg" width="300" height="200" id="alf">
+</body>
+
+</html>

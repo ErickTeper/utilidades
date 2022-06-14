@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style>
+
+#imagenes{
+    width: 1465px;
+    margin: auto;
+}
+img{
+    padding: 20px 30px;
+}
+
+#mensaje_img1{
+    position: absolute;
+    left: 623px;
+    top: 392px;
+    width: 561px;
+    height: 215px;
+    background-color: #ff9;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 25px;
+    border: dotted 2px #00f;
+}
+
+</style>
+
+<script>
+
+    $(document).ready(function(){
+
+        $("#mensaje_img1").hide()
+
+        $("#perro").hover(mensaje_on, mensaje_off);
+
+    });
+
+    function mensaje_on(){
+        $("#mensaje_img1").show();
+    }
+    function mensaje_off(){
+        $("#mensaje_img1").hide();
+    }
+
+
+</script>
+
+</head>
+
+
+<body>
+
+    <div id="mensaje_img1">que pasa con ese perro!</div>
+    
+    <div id="imagenes">
+        <img src="imagen/perro.jpg" id="perro" width="400px" height="250px">
+        <img src="imagen/trago.webp" id="trago" width="400px" height="250px">
+        <img src="imagen/alf.jpg" id="alf" width="400px" height="250px">
+    </div>
+
+</body>
+
+</html>

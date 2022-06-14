@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>documento </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+
+</style>
+<script>
+
+$(document).ready(function(){
+/*en web garantiza que la imagen este cargada*/
+   var foto_hover=["imagen/perro.jpg",
+                "imagen/alf.jpg",
+                "imagen/trago.webp" ];
+    
+    var imagenes=[];
+    for(var i=0; i<foto_hover.length; i++){
+        imagenes[i]=new Image();
+        imagenes[i].src=foto_hover[i];
+    }    
+
+
+$("img").each(function() {
+
+        $(this).hover(cambiar, restaurar);
+    })
+
+
+function cambiar(e){
+    if(e.target==alf){
+        $("#alf").attr("src", imagenes[0].src);
+    }
+    else if(e.target==trago){
+        $("#trago").attr("src", imagenes[1].src);
+    }
+    else if(e.target==perro){
+        $("#perro").attr("src", imagenes[2].src);
+    }
+
+}
+function restaurar(e){
+    if(e.target==alf){
+        $("#alf").attr("src", "imagen/alf.jpg");
+    }
+    else if(e.target==trago){
+        $("#trago").attr("src", "imagen/trago.webp");
+    }
+    else if(e.target==perro){
+        $("#perro").attr("src", "imagen/perro.jpg");
+    }
+    
+}
+});
+</script>
+
+
+</head>
+
+
+<body>
+
+<img src="imagen/alf.jpg" width="300" height="200" id="alf">
+<img src="imagen/trago.webp" width="300" height="200" id="trago">
+<img src="imagen/perro.jpg" width="300" height="200" id="perro">
+</body>
+
+</html>

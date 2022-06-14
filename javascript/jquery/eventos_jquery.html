@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style>
+
+h1{
+    text-align: center;
+}
+body{
+    background-color: #334873;
+    color: #fff;
+}
+
+#principal{
+    width:60%;
+    margin:auto;
+}
+a{
+    color: #fff;
+    font: bold 20px Verdana, Geneva, sans-serif;
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+    $("html").dblclick(function(){
+        alert("doble click");
+    });
+
+    $("a").mouseover(function(){
+
+        var mensaje="<p> hace click! </p>";
+        $("#principal").append(mensaje);
+    });
+
+        $("#el_boton").click(function(){
+            //this hace referencia al objeto donde estamos
+        $(this).val("que tocas gil!") //val() modifica la opcion valie de la etiqueta
+    });
+
+    $("#el_campo").focus(function(){
+
+        $(this).val("estas por escribir");
+    });
+
+});
+
+
+</script>
+
+</head>
+
+
+<body>
+<div id="principal">
+<h1>Introduccion a Eventos</h1>
+<p><a href="#">link aqui</a></p>
+<form action="#" method="get">
+    <fieldset><legend>Formulario</legend><p>
+        <input type="button" name="button" id="el_boton" value="un boton">
+    </p>
+    <p><input type="text" name="textfield" id="el_campo"></p></fieldset>
+</form>
+
+</div>
+
+</body>
+
+</html>

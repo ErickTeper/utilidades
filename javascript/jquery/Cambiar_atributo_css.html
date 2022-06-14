@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!--FUNCIONES A UTILIZAR: addClass(), toggleClass(), removeClass()-->
+<style>
+.linkdestacacursos{
+    background-color: blueviolet;
+}
+
+a{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+td{
+    border: none;
+}
+
+#contieneEnlaces{
+    position: absolute;
+    left: 31px;
+    top: 65px;
+    width: 400px;
+    height: 649px;
+    z-index: 1;
+    padding-top: 100px;
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+    //$("a[href^='t']").addClass("linkdestacacursos"); //apunta a enlaces "a" que continuen con hrf=t
+
+    document.getElementById("cursos").addEventListener("click", resaltacursos, false);
+    document.getElementById("informacion").addEventListener("click", resaltarejemplos, false)
+});
+
+function resaltacursos(){
+    $(".ejemplos").removeClass("linkdestacacursos"); //elimina el resaltado de ejemplos
+    $(".cursos").addClass("linkdestacacursos"); //agrega resaltado a cursos
+
+}
+
+function resaltarejemplos(){
+
+    $(".cursos").removeClass("linkdestacacursos");
+    $(".ejemplos").addClass("linkdestacacursos");
+}
+
+</script>
+
+
+</head>
+<body>
+
+<div id="contieneEnlaces">
+    <a href="t" target="_blank" class="cursos">primero</a><br>
+    <a href="#" target="_blank" >segundo</a><br>
+    <a href="#" target="_blank" class="cursos">tercero</a><br>
+    <a href="t" target="_blank" class="ejemplos">cuarto</a><br>
+    <a href="#" target="_blank">quiento</a><br>
+    <a href="#" target="_blank" class="ejemplos">sexto</a><br>
+    
+</div>
+
+<table width="100%" border="1"> 
+    <tr>
+        <td>cursos destacados&nbsp;&nbsp;<input type="button" value="cursos" id="cursos"></td>
+        <td>informacion adicional&nbsp;&nbsp;<input type="button" value="informacion" id="informacion"></td>
+    </tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>banner </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style>
+#banner{
+    background-color:red;
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    left: 400px;
+    top: 50px;
+    font-size: 36px;
+    text-align: center;
+    }
+img{
+    float: left;
+    margin: 15px;
+    width: 350px;
+    height: 200px;
+}
+
+#sustitucion{
+    float: left;
+    margin: 15px;
+    width: 350px;
+    height: 200px;
+    font-size: 36px;
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+    //var z=document.getElementById("cerrar");
+    //z.addEventListener("click", cerrar_banner, false); 
+    
+    document.getElementById("cerrar").addEventListener("click", cerrar_banner, false)
+      
+    document.getElementById("perro").addEventListener("click", carrito, false)
+    document.getElementById("trago").addEventListener("click", carrito2, false)
+    document.getElementById("alf").addEventListener("click", alf, false)
+})  
+   
+
+function cerrar_banner(){
+   $("#banner").remove(); //ELIMINA ETIQUETA
+}
+
+function carrito(){
+    $("#perro").replaceWith("<div id='sustitucion'>Agregado al carro </div>");
+}
+
+function carrito2(){
+$("#trago").replaceWith("<div id='sustitucion'>Agregado al carro </div>");
+ }
+function alf(){
+$("#alf").replaceWith("<div id='sustitucion'>Hola Willi! </div>");
+}
+
+</script>
+
+
+</head>
+
+
+<body>
+
+    <div id="banner">
+        banner prueba
+        <p id="cerrar">Cerrar</p>
+
+    </div>
+
+<div id="carrete">
+    <img src="imagen/perro.jpg" width="250" height="175" id="perro">
+    &nbsp;<!--espacio duro, evita que se produzca un salto automático de renglón-->
+    <img src="imagen/trago.webp" width="250" height="175" id="trago">
+    &nbsp;
+    <img src="imagen/alf.jpg" width="250" height="175" id="alf">
+</div>
+
+
+
+</body>
+
+</html>

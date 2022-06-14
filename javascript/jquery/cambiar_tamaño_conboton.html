@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+    #primer_parrafo{
+        background-color: #f00;
+    }
+
+    #tercer_parrafo{
+        font-size: 20px;
+    }
+</style>
+
+<script>
+$(document).ready(function(){
+
+    var colorFondo= $("#primer_parrafo").css("background-color"); //crea objeto q almacena el valor d ela propiedad css
+    alert(colorFondo); 
+    $("#primer_parrafo").css("background-color", "#00f"); //Cambia valores css del primer parrabo
+    $("p.destacado").css("border", "2px dotted blue") //cambia varios valores css del segundo parrafo
+
+    /*boton a la escucha*/
+    /*
+    document.getElementById("agranda").addEventListener("click", aumentar, false);
+    document.getElementById("achica").addEventListener("click", achicar, false);
+
+    document.getElementById("agranda2").addEventListener("click", aumentar, false);
+    document.getElementById("achica2").addEventListener("click", achicar2, false);
+    */
+   var botones=document.querySelectorAll("input");
+   for(var i=0; botones.length; i++){
+       botones[i].addEventListener("click", aumentar,false);
+       botones[i].addEventListener("click", achicar, false);
+   }
+
+
+});
+
+function aumentar(e){
+
+    var zonaActuacion;
+
+    if(e.target==agranda){
+
+        zonaActuacion="#tercer_parrafo";
+    
+    }else if (e.target==agranda2){
+        zonaActuacion="#primer_parrafo";
+    }
+
+    var tamanio=$(zonaActuacion).css("font-size");
+    //alert(tamanio)
+    tamanio=parseInt(tamanio);
+    $(zonaActuacion).css("font-size", tamanio+2);
+}
+
+function achicar(e){
+
+var zonaActuacion;
+
+if(e.target==achica){
+
+    zonaActuacion="#tercer_parrafo";
+
+}else if (e.target==achica2){
+    zonaActuacion="#primer_parrafo";
+}
+
+var tamanio=$(zonaActuacion).css("font-size");
+//alert(tamanio)
+tamanio=parseInt(tamanio);
+$(zonaActuacion).css("font-size", tamanio-2);
+}
+
+
+/*
+function achicar(){
+    var tamanio=$("#tercer_parrafo").css("font-size");
+    tamanio=parseInt(tamanio);
+    $("#tercer_parrafo").css("font-size", tamanio-2);
+}
+
+
+function achicar2(){
+    var tamanio=$("#primer_parrafo").css("font-size");
+    tamanio=parseInt(tamanio);
+    $("#primer_parrafo").css("font-size", tamanio-2);
+}
+*/
+
+</script>
+
+</head>
+
+<body>
+<p id="primer_parrafo">primer parrafo</p>
+<p class="destacado">parrafo destacado</p>
+<p id="tercer_parrafo">tercer parrafo</p>
+<input type="button" value="agrandatexto" id="agranda">
+<input type="button" value="achicatexto" id="achica">
+<input type="button" value="agrandatexto2" id="agranda2">
+<input type="button" value="achicatexto2" id="achica2">
+</body>
+
+</html>

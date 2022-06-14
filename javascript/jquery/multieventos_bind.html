@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style>
+table{
+    text-align: center;
+    float: right;
+    margin-right: 50px;
+}
+p{
+    font-size: 1.3em;
+}
+#imagen_grande{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 700px;
+    height: 405px;
+    z-index: 1;
+    border: dotted 5px #00f;
+}
+
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+    var v_img1=$("#alf").attr("src");
+    $("#imagen_grande").hide();
+    $("#alf").bind("click", v_img1, abreimagen);
+
+});
+
+function abreimagen(e){
+
+     e.stopPropagation(); //hace que el evento no se propague para otros objetos en el que se situa
+    $("#imagen_grande").fadeIn(1000);
+    $("#img_sustitucion").replaceWith("<img src='"+e.data+"' width='700' height='405'>")
+}
+
+$(document).bind("click keypress", function(){ //tanto haciendo click como tocando alguna tecla
+
+$("#imagen_grande").fadeOut(1000);
+
+});
+
+
+</script>
+
+</head>
+
+<body>
+<div id="imagen_grande"><img src="" id="img_sustitucion" ></div>
+<p> texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto textov
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+</p>
+<table border="0">
+    <tr>
+<td><img src="imagen/alf.jpg" id="alf" width="250" height="150" ></td>
+</tr>
+</table>
+<p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+    texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+    </p>
+
+
+</body>
+
+</html>

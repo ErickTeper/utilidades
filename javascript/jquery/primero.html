@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<script>
+
+        $(document).ready(function(){
+
+            $("#carrete img").hide();
+
+        });
+
+</script>
+
+</head>
+
+
+<body>
+<div id="carrete">
+<img src="imagen/perro.jpg" width="250" height="175">
+&nbsp;<!--espacio duro, evita que se produzca un salto automático de renglón-->
+<img src="imagen/trago.webp" width="250" height="175">
+&nbsp;
+<img src="imagen/alf.jpg" width="250" height="175">
+</div>
+
+<!-- ***SIN JQUERY***
+    <script>
+    // un array de las imagenes
+       var imagenes=document.querySelectorAll("#carrete img");
+   
+           for(var i=0; i<imagenes.length;i++){
+               imagenes[i].style.visibility="hidden"; //invisibiliza las imagenes
+               
+           }
+   
+   
+   </script> 
+-->
+
+</body>
+
+</html>

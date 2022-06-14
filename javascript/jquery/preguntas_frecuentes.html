@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+body{
+    background-color: #009;
+    color: #fff;
+}
+h3{
+    background-color: aqua;
+    padding: 10px 0 0 25;
+    cursor: pointer;
+}
+h3.cerrar{
+    background-color: rgb(104, 154, 211);
+}
+.respuesta{
+    margin-left: 25px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.principal{
+    margin-left: 200px;
+    margin-top: 150px;
+}
+
+</style>
+
+<script>
+$(document).ready(function(){
+$(".respuesta").hide();
+$(".principal h3").click(function(){
+				$(this).toggleClass("cerrar").next(".respuesta").fadeToggle(800);
+			});
+
+});
+
+
+</script>
+
+</head>
+
+<body>
+<div>
+    <p><img src="imagen/perro.jpg" width="400" height="250"></p>
+    <h1 class="titulo">Preguntas frecuentes</h1>
+</div>
+<div class="principal">
+<h2> preguntas</h2>
+
+<h3>aqui va la primera pregunta</h3>
+<div class="respuesta">
+    <p>he aqui la respuesta a su pregunta</p>
+</div>
+
+<h3>aqui va la seungda pregunta</h3>
+<div class="respuesta">
+    <p>he aqui la respuesta a su preguntanumero 2</p>
+</div>
+<h3>aqui va la ultima pregunta</h3>
+<div class="respuesta">
+    <p>he aqui la respuesta a su pregunta</p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

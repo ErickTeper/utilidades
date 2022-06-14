@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>documento </title>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<!--se utiliza funcion attr() y removeAttr()-->
+
+<script>
+
+    $(document).ready(function(){
+
+        document.getElementById("alf").addEventListener("mouseover", cambiar, false);
+        document.getElementById("alf").addEventListener("mouseout", restaurar, false);
+
+          
+
+    });
+    function cambiar(){
+
+        $("#alf").attr("src", "imagen/perro.jpg");
+
+    }
+    function restaurar(){
+
+        $("#alf").attr("src", "imagen/alf.jpg");
+
+    }
+
+
+
+
+</script>
+
+</head>
+
+
+<body>
+    <!--modificamos el atributo src-->
+    <img src="imagen/alf.jpg" id="alf" height="200px" width="400px">
+
+</body>
+
+</html>

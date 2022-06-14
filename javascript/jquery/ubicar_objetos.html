@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>documento </title>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+    .micontenedor{
+        background-color: lightblue;
+    }
+</style>
+  
+<script>
+
+function validar(){
+
+        var n_usuario = document.getElementById("usuario").value;
+            
+            if(n_usuario==""){
+                $("#usuario").after("rellena este campo");
+            }
+
+    }
+</script>
+
+<script>
+
+    $(document).ready(function(){
+
+        //alert($("#errores").html()); //obtene las etiquetas y contenido
+        //$("#errores").html("<p> Hay errores</p>"); //cambia el texto
+        $("#errores").append("<p> abajo del texto</p>"); //agrega texto despues
+        $("#errores").prepend("<p> arriba del texto</p>"); //agrega texto antes
+        $("#errores").before("<p> antes del elemento</p>");
+        $("#errores").after("<p> despues del elemento</p>");
+        //$("#errores").ext("sustituye texto"); //solo sustituye texto sin etiquetas
+
+    });
+
+</script>
+
+
+</head>
+
+
+<body>
+<div id="contenedor">
+    <div id="errores" class="micontenedor">
+
+        <h2>Texto</h2>
+
+    </div>
+
+</div>
+
+<form action="" method="get">
+<input name="" type="text" id="usuario"> <br>
+<input name="" type="text" id="nombre"><br>
+<input name="" type="text" id="apellido"><br>
+<input type="button" value="enviar" onclick="validar()">
+
+</form>
+
+</body>
+
+</html>
